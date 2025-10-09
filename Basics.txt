@@ -1,0 +1,23 @@
+Things to keep in mind 1.State , 2.Rerendering , 3.Components
+
+State- An state is the object that represents the current state of the app .
+       It represents the dynamic things in your app (things that change)
+       For ex. the counter in the react boilerplate
+
+Rerendering- A state change triggers re-render  
+             A re-render represents the actual DOM being manipulated when state changes
+
+           
+Components-
+
+
+Virtual DOM - 
+
+
+Rerendering Problem - 
+  so if we add any state in the root component (main component / Parent) which is goona change after the render (wen loads) so the whole component gets re-render so to avoid that we declare the state that is changing in the nearest ancestors
+
+memo
+memo lets you skip re-rendering a component when its props are unchanged.
+
+const MemoizedComponent = memo(SomeComponent, arePropsEqual?)

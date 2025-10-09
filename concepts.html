@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="button-div">
+
+    </div>
+
+    <script>
+        /*
+        component function - to create a component button
+        re-render func - re-render count 
+        state
+
+        */
+       let state = {
+        count : 0
+       }
+       function onButtonPress(){
+        state.count++;
+        rerender()
+       }
+       function rerender(){
+        document.querySelector(".button-div").innerHTML = " ";
+        const component_ = component(state.count)
+        document.querySelector(".button-div").appendChild(component_)
+       }
+
+       function component(count){
+       let button = document.createElement("button")
+       button.innerHTML = `Count ${count}`
+       button.setAttribute("onclick","onButtonPress()")
+       return button
+       }
+       rerender()
+    </script>
+</body>
+</html>
